@@ -57,6 +57,7 @@ public class WindowManager extends JFrame  implements WindowListener {
         addComponentListener();
 
         frame.setVisible(true);
+        frame.setResizable(false);
         frame.revalidate();
         frame.repaint();
     }
@@ -98,15 +99,6 @@ public class WindowManager extends JFrame  implements WindowListener {
         FileManager.get().saveJsonFile(path,obj);
     }
 
-    public void fullscreen() {
-        fullscreen(!fullscreen);
-    }
-
-    public void fullscreen(boolean val) {
-        fullscreen = val;
-        frame.dispose();
-        initFrame();
-    }
 
     public String getTitle(){
         return "CardStudy";
@@ -126,14 +118,6 @@ public class WindowManager extends JFrame  implements WindowListener {
     public void addComponentListener(){
         frame.addComponentListener(new ComponentAdapter()
         {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                Component c = (Component)e.getSource();
-                if(!fullscreen) {
-                    size.set(c.getWidth(), c.getHeight());
-                }
-            }
-
             @Override
             public void componentMoved(ComponentEvent e) {
                 Component c = (Component)e.getSource();

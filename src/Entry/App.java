@@ -8,6 +8,7 @@ import Engine.Utils.Event.EventListener;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.Collections;
 
 public class App implements EventListener {
     public static boolean running = true;
@@ -51,8 +52,6 @@ public class App implements EventListener {
                 case 27:
                     close();
                     break;
-                case 122:
-                    WindowManager.get().fullscreen();
             }
             if(kE.getKeyCode() == 27){ //written in Input
                 close();
