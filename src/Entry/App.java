@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 public class App implements EventListener {
+    public static boolean running = true;
     public static App instance;
     public void start(){
         WindowManager.get().init();
@@ -19,9 +20,10 @@ public class App implements EventListener {
     }
 
     public void run(){
-        while (true){
+        while (running){
             update();
         }
+        close();
     }
 
     public void update(){

@@ -3,6 +3,7 @@ package Engine.Managers;
 import Engine.IO.Input;
 import Engine.Math.Vector.Vector2i;
 import Entry.App;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -38,6 +39,12 @@ public class WindowManager extends JFrame  implements WindowListener {
     }
 
     private void initFrame(){
+        try {
+            UIManager.setLookAndFeel(new FlatMacDarkLaf());
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
+
         frame = new JFrame(getTitle());
         frame.setExtendedState(fullscreen ? JFrame.MAXIMIZED_BOTH : JFrame.NORMAL);
         frame.setUndecorated(fullscreen);
@@ -102,7 +109,7 @@ public class WindowManager extends JFrame  implements WindowListener {
     }
 
     public String getTitle(){
-        return "A cyoa gaming helper by Saperate!";
+        return "CardStudy";
     }
 
     public void dispose(){

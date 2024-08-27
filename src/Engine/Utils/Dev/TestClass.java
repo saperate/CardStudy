@@ -25,8 +25,8 @@ public class TestClass  implements EventListener {
         //refer to the target class for these values
         if(DevTools.get().getEventTargetById(e.getSender()) == "input" && e.getEventType() == 1){
             MouseEvent mE = (MouseEvent) e.getContents();
-            if(mE.getButton() == 1){ //written in Input
-                System.out.println("Yippee");
+            if(mE.getButton() == 1){
+
             }
         }
 
